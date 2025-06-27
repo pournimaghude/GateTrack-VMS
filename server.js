@@ -10,9 +10,9 @@ app.use(express.static('views'));
 // MySQL configuration
 const config = {
   host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'temp',
+  user: 'root', //enter username
+  password: 'root', //enter password
+  database: 'temp', //db name
   port: 3306,
 };
 
