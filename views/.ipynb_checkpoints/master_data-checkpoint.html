@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Entry List</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  /* Header Section */
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sub-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .sub-head h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn i {
+    margin-right: 0.5rem;
+  }
+  
+  .btn-primary {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2980b9;
+  }
+  
+  .btn-excel {
+    background-color: #28a745;
+    color: #fff;
+    margin-left: 0.5rem;
+  }
+  
+  .btn-excel:hover {
+    background-color: #218838;
+  }
+  
+  /* Search */
+  .search-container {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1.5px solid #ccc;
+  border-radius: 30px;
+  padding: 10px 16px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.search-container i {
+  color: #888;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.search-container input[type="text"] {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 8px 0;
+  width: 100%;
+  outline: none;
+  color: #333;
+}
+
+.search-container input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+  
+  /* Table Styling */
+  .table-container {
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+  
+  thead {
+    background-color: #259ac9;
+    color: white;
+  }
+  
+  th,
+  td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sub-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  
+    .search-container {
+      width: 100%;
+    }
+  }
+/* Fullscreen overlay */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #dbeeff, #f3f9ff);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+  flex-direction: column;
+}
+
+/* Centered content */
+.custom-loader-content {
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.loader-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.loader-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 2;
+  }
+  50% {
+    transform: scale(2.1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="sub-head">
+                <h1><i class="fas fa-car"></i> Master Data Of Employee</h1>
+                <div class="search-container">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="searchInput" placeholder="Search by any field..." />
+                </div>
+                <a href="index.html" class="btn btn-primary">
+                    Go to Dashboard  <i class="fa-solid fa-right-from-bracket" style="padding: 5px;"></i> 
+                </a>
+              </div>
+        </div>
+
+        <div id="loader-wrapper">
+          <div class="custom-loader-content">
+            <img src="/img/asb_icon.jpg" alt="App Logo" class="loader-logo">
+          </div>
+        </div>
+        
+             
+
+        <div class="table-container">
+            <table id="vehicleTable">
+                <thead>
+                    <tr>
+                      <th>EMP NAME</th>
+                      <th>DESIGNATION</th>
+                      <th>DEPARTMENT</th>
+                      <th>EMP ID</th>
+                      <th>VEHICLE NUMBER</th> 
+                    </tr>
+                  </thead>
+                <tbody id="vehicleTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+<script>
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader-wrapper');
+    if (loader) {
+      loader.style.opacity = '0';
+      setTimeout(() => loader.style.display = 'none', 1000);
+    }
+  });
+  
+//data fetch from backend API
+async function fetchEmployees() {
+    try {
+      const response = await fetch('api/master_data');
+      const data = await response.json();
+      const tbody = document.getElementById('vehicleTableBody');
+      tbody.innerHTML = ''; // clear old rows if any
+
+    data.forEach(vehicle => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${vehicle.owner_name}</td>
+        <td>${vehicle.designation|| "-" }</td>
+        <td>${vehicle.department|| "-"}</td>
+        <td>${vehicle.empid || "-"}</td>
+        <td>${vehicle.vehicle_no}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  }catch(error ){
+    console.error('Error fetching vehicle data:', error);
+  }
+}
+// Search filter logic
+document.getElementById('searchInput').addEventListener('input', function () {
+  const searchTerm = this.value.toLowerCase();
+  const rows = document.querySelectorAll('#vehicleTableBody tr');
+
+  rows.forEach(row => {
+    const cells = Array.from(row.children);
+    const match = cells.some(cell => cell.textContent.toLowerCase().includes(searchTerm));
+    row.style.display = match ? '' : 'none';
+  });
+});
+
+window.onload = fetchEmployees;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/img/asb_icon.jpg" />
+  <title>ASB Vehicle Management System</title>
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7fa; color: #333; }
+
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #35a1d3;
+  color: white;
+  padding: 0 31px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Left: Brand + Navigation */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ecf0f1;
+  white-space: nowrap;
+}
+
+#mainNav {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+#mainNav li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#mainNav li a:hover {
+  background-color: rgba(240, 240, 240, 0.2);
+  color: #fff;
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+
+.logout-btn a {
+  display: inline-block;
+  background-color: #dc3545; /* Bootstrap danger red */
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logout-btn a:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.logout-btn a:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Right: User Info */
+.user-info-header {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.user-details {
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    padding: 0.2rem 1.5rem;
+    margin: 1rem 0;
+    transition: box-shadow 0.3s ease;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.user-details:hover {
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  background: linear-gradient(135deg, #d6f3ff, #ffffff);
+  transform: scale(1.01);
+}
+
+
+.user-line {
+  display: flex;
+  align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.user-line:last-child {
+  margin-bottom: 0;
+}
+
+.user-line i {
+  margin-right: 0.6rem;
+  color: #007bff;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.user-line:hover i {
+  transform: scale(1.2);
+  color: #0056b3;
+}
+
+.user-line strong {
+  color: #000;
+}
+
+/* Make navigation stack on small screens */
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .user-info-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .form-block {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    .form-block label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .form-block input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-block .actions {
+      display: flex;
+      gap: 10px;
+      
+    }
+    .form-block button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn-primary { background-color: #2980b9; color: #fff; }
+    .btn-primary:hover { transform: translateY(-1px); background-color: #2099eb; opacity: 0.9; }
+    .btn-secondary { background-color: #4CAF50; color: #fff; }
+    .btn-secondary:hover {  transform: translateY(-1px); background-color: #45c549; opacity: 0.9; }
+    .logout-btn {
+
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    /* Table */
+    .table-block {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    th { background-color: #259ac9; color:white; font-weight: 600; }
+    tr:hover {
+    background-color: #f1faff;
+    border-left: 4px solid #007bff;
+     cursor: pointer;
+     transition: background 0.3s ease;
+    }
+
+    .btn-out {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-out:hover {
+      background-color: #c0392b;
+      transform: translateY(-1px);
+    }
+    .btn-out:active {
+      transform: translateY(0);
+    }
+    #mainNav li a {
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+    }
+    
+    #mainNav li a:hover {
+      color: #1976d2;
+    }
+    
+ /* Container for the input and icon */
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 480px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  margin: 5px 0;
+  width: 100%;
+  padding: 0 10px;
+  overflow: hidden; /* Prevent the icon from overflowing the input */
+}
+
+
+/* Font Awesome icon styling */
+.search-container i {
+  padding: 0 15px;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+/* Input field styling */
+#vehicleSearch {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent; /* Make the background transparent */
+  transition: all 0.3s ease;
+}
+
+/* Placeholder text styling */
+#vehicleSearch::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Focus state for input */
+#vehicleSearch:focus {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Subtle shadow */
+}
+
+/* Change placeholder color when focused */
+#vehicleSearch:focus::placeholder {
+  color: #007bff;
+}
+
+.status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* responsive for smaller screens */
+      padding: 10px 15px;
+      background-color: #eef7ff;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+      gap: 15px;
+    }
+    
+    /* Apply styling to the vehicle count and date */
+    #vehicleCountDisplay{
+      font-weight: bold;
+      color: black;
+    }
+    
+      /* ---------- RESPONSIVE STYLES ---------- */
+@media (max-width: 768px) {
+
+  /* Navigation: Stack menu vertically */
+  header.top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header.top-nav nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  header.top-nav nav ul li {
+    margin: 5px 0;
+  }
+
+  /* Actions: Buttons stack vertically */
+  .form-block .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Count & Date section: stack vertically */
+  .container > div:nth-of-type(3) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container > div:nth-of-type(3) h2 {
+    margin-bottom: 10px;
+    margin-left: 80px;
+  }
+
+  /* Table responsiveness */
+  .table-block {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    min-width: 286px; /* Ensures scroll on small screens */
+  }
+
+}
+#gatewiseCounts {
+  padding: 8px;
+  background: #e7f1ff;
+  border: 1px solid #b3d4fc;
+  border-radius: 6px;
+  width: fit-content;
+  margin-top: 10px;
+}
+.gate-btn {
+  margin: 4px;
+  padding: 6px 10px;
+  background-color: #e6e6fa;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.gate-btn:hover {
+  background-color: #dcdcff;
+}
+.gate-btn.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-left-color: #0056b3;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+button, a, .user-details, .user-line, .gate-btn, #mainNav li a {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Container for buttons */
+#gateButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background-color: #f4faff;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
+  margin-bottom: 20px;
+}
+
+/* Individual button styles */
+#gateButtons button {
+  background-color: #e6f0ff;
+  border: none;
+  border-left: 6px solid #007bff;
+  border-radius: 8px;
+  padding: 10px 18px;       
+  font-weight: 600;
+  font-size: 16px;            
+  color: #333;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+#gateButtons button:hover {
+  background-color: #d0e5ff;
+}
+
+.search-date-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;            
+  flex-wrap: wrap;                
+  gap: 10px;
+}s
+
+.search-date-container input {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+.search-date-container h2 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.form-block button:hover,
+.btn-out:hover,
+#gateButtons button:hover,
+.gate-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  transition: all 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.user-details {
+  animation: fadeIn 0.8s ease-out both;
+  animation-delay: 0.2s;
+}
+#gateButtons {
+  animation: slideIn 0.8s ease-out both;
+  animation-delay: 0.4s;
+}
+.form-block { animation: fadeIn 0.7s ease-out both; }
+.table-block { animation: slideIn 0.8s ease-out both; }
+.search-container { animation: fadeIn 1.2s ease-out both; }
+
+
+@media (max-width: 480px) {
+  /* 1. Hide Master Data & Vehicle Entries links */
+  #mainNav li:nth-child(1), #mainNav li:nth-child(2) {
+    display: none;
+  }
+
+  /* 2. Header and User Info simplified */
+  .top-nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .header-left {
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .brand {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* .user-info-header {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  } */
+
+  .user-info-header{
+    width: 100%;
+    align-items: center;
+  }
+  .user-details {
+    width: auto;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .user-line {
+    font-size: 0.75rem;
+  }
+
+  /* 3. Form Styling */
+  .form-block {
+    padding: 15px;
+  }
+
+  .form-block input[type="text"],
+  .form-block input[type="number"] {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-block label {
+    font-size: 14px;
+  }
+
+  .form-block .actions {
+    flex-direction: column;
+  }
+
+  .form-block button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  /* 4. Gate Buttons */
+  #gateButtons {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    margin-left: 80px;
+  }
+   .new-registration-btn {
+    display: none;
+  }
+
+  #gateButtons button {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* 5. Table Responsive Simplified Columns */
+  .table-block table thead th:not(:first-child):not(:nth-child(2)):not(:last-child),
+  .table-block table tbody td:not(:first-child):not(:nth-child(2)):not(:last-child) {
+    display: none;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  /* Optional: make table scrollable on smaller screens */
+  .table-block {
+    overflow-x: auto;
+  }
+
+  /* 6. Search Container */
+  .search-container {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  #vehicleSearch {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .search-container i {
+    font-size: 1rem;
+  }
+  .status-bar{
+    display: none;
+  }
+
+ 
+}
+
+/* Stylish dropdown with glowing and gentle animation */
+#guardSelect {
+  border: 2px solid #a950e4; /* green outline */
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #e0ffe0, #ffffff);
+  color: #8b5bd8;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(141, 74, 218, 0.6);
+  animation: pulseGlow 2s infinite, slightBounce 3s infinite;
+  transition: all 0.3s ease;
+}
+
+/* Label styling */
+label[for="guardSelect"] {
+  font-weight: bold;
+  color: #824bca;
+  font-size: 16px;
+  animation: pulseLabel 2s infinite;
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(178, 24, 224, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 12px rgb(95, 40, 167);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(140, 110, 197, 0.5);
+  }
+}
+
+/* Gentle up-down bounce */
+@keyframes slightBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Subtle label pulse */
+@keyframes pulseLabel {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+
+</style>
+</head>
+<body>
+  <!-- Top Navigation -->
+<!-- Include Font Awesome in <head> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<header class="top-nav">
+    <div class="header-left">
+      <div class="brand">ASB INTERNATIONAL Pvt. Ltd.</div>
+    </div>
+  
+    <div class="user-info-header">
+      <nav>
+        <ul id="mainNav">
+          <li><a href="#" onclick="navigateTo('allVehicles')">Master Data</a></li>
+          <li><a href="#" onclick="navigateTo('completedEntries')">Vehicle Entries</a></li>
+          <li><a href="#" onclick="navigateTo('CompanyVehicleEntries')">company-vehicle_entries</a>
+        </ul>
+      </nav>
+
+      <div class="user-details">
+        <div class="user-line">
+          <i class="fas fa-user"></i>
+          <span>Logged in as: <strong id="loggedInUsername"></strong></span>
+        </div>
+        <div class="user-line">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Current Location: <strong id="loggedInLocation"></strong></span>
+        </div>
+      </div>
+
+      <div class="logout-btn">
+        <a href="#" id="logoutButton" onclick="logout()">Logout</a>
+      </div>
+
+    </div>
+</header>
+
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Vehicle Entry Form -->
+    <div class="form-block" id="vehicle_entry_block">
+      <label for="vehicle_no">Vehicle No:</label>
+      <input type="text" id="vehicle_no" required />
+
+      <div class="actions">
+        <button class="btn-secondary" onclick="searchVehicle()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        <!-- <button class="btn-primary new-registration-btn" onclick="Registration()"><i class="fa-solid fa-user-plus"></i> New Registration</button> -->
+      </div>
+
+      <div id="vehicle_options" style="margin: 10px 0;"></div>
+
+      <label for="owner_name">Owner Name:</label>
+      <input type="text" id="owner_name" readonly />
+
+      <div class="actions">
+        <label for="guardSelect">Select Guard Name:</label>
+        <select id="guardSelect" required>
+              <option value="" disabled selected>Select Guard</option>
+              <option value="RAKESH">RAKESH</option>
+              <option value="SURESH">SURESH</option>
+              <option value="AMIT">AMIT</option>
+              <!-- Add more guards here -->
+        </select>
+        <button class="btn-primary" onclick="submitEntry()">Submit</button>
+      </div>
+    </div>
+
+    <!-- Hidden fields for system time and date -->
+    <input type="hidden" id="in_time" />
+    <input type="hidden" id="in_date" />   
+
+     <!-- Latest Entries Table -->
+    <div class="status-bar">
+      <h2><div id="vehicleCountDisplay"></div></h2>
+      <div id="gateButtons"></div>
+    </div>
+    
+    <div class="search-date-container">
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="vehicleSearch" placeholder="Search by Vehicle No, Owner or Location" onkeyup="filterTable()">
+      </div>      
+    </input>
+      <h2><span id="currentDateDisplay"></span></h2>
+    </div>
+
+    <div class="table-block">
+      <table id="entries_table">
+        <thead>
+          <tr>
+            <th><i class="fa-solid fa-car"></i></i> Vehicle No</th>
+            <th><i class="fa-solid fa-user-tie"></i> Owner Name</th>
+            <th><i class="fa-solid fa-location-pin"></i> Location</th>
+            <th><i class="fas fa-clock"></i> In-Time</th>
+            <th><i class="fa-regular fa-calendar"></i> In-Date</th>
+            <th><i class="fa-solid fa-user-shield"></i> In By</th>
+            <th><i class="fas fa-clock"></i> Duration Inside</th> 
+            <th> Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+</div>
+
+  <script>
+  const guardSelect = document.getElementById('guardSelect');
+
+guardSelect.addEventListener('change', () => {
+  if (guardSelect.value) {
+    guardSelect.classList.add('valid');
+  } else {
+    guardSelect.classList.remove('valid');
+  }
+});
+
+function remindGuardSelection() {
+  if (!guardSelect.value) {
+    guardSelect.classList.remove('valid');
+    guardSelect.classList.add('shake');
+
+    setTimeout(() => {
+      guardSelect.classList.remove('shake');
+    }, 300);
+  }
+}
+
+  // Check if user is logged in
+  if (!localStorage.getItem('username')) {
+    window.location.href = '/login.html';
+  }
+
+  let logoutTimer;
+
+  function resetTimer() {
+    clearTimeout(logoutTimer);
+    // 15 minutes = 15 * 60 * 1000 ms = 900000 ms
+    logoutTimer = setTimeout(autoLogout, 600000);
+  }
+
+  function autoLogout() {
+    alert('Logged out due to 15 minutes of inactivity.');
+    localStorage.removeItem('username');
+    localStorage.removeItem('location');
+    window.location.href = '/login.html';
+  }
+
+  // Reset timer on user activity
+  window.onload = resetTimer;
+  document.onmousemove = resetTimer;
+  document.onkeydown = resetTimer;
+  document.onclick = resetTimer;
+  document.onscroll = resetTimer;
+
+    
+//Logout
+function logout() {
+  localStorage.removeItem('username'); // or 'token', etc.
+  localStorage.removeItem('location'); // or 'token', etc.
+
+  window.location.href = '/login.html'; // Redirect to login page
+}
+//New Registration
+function Registration(){
+  window.location.href = 'addEmployee.html';
+}
+
+// Display logged-in user info
+document.addEventListener('DOMContentLoaded', () => {
+  const username = localStorage.getItem('username');
+  const location = localStorage.getItem('location');
+
+  document.getElementById('loggedInUsername').textContent = username || 'Unknown';
+  document.getElementById('loggedInLocation').textContent = location || 'Unknown';
+});
+
+// Function to handle card button navigation
+function navigateTo(page) {
+      switch (page) {
+        case 'allVehicles':
+          window.location.href = 'master_data.html';
+          break;
+        case 'completedEntries':
+          window.location.href = 'vehicle-entries.html';
+          break;
+        case 'CompanyVehicleEntries':
+        window.location.href = 'company-vehicle-entries.html';
+        break;
+        default:
+          alert('Page not found');
+      }
+    }
+    
+// Helper function to format time as HHMMSS
+function formatTime(timeStr) {
+  if (!timeStr) return '-';
+  const parts = timeStr.split(':');
+  if (parts.length >= 2) {
+    const hours = parts[0].padStart(2, '0');
+    const minutes = parts[1].padStart(2, '0');
+    return `${hours}:${minutes}`;
+  }
+  return '-';
+}
+
+function searchVehicle() {
+    const vehicleNo = document.getElementById('vehicle_no').value.trim();
+
+  if (!vehicleNo || vehicleNo.length < 4) {
+    alert('Please enter at least the last 4 digits of the Vehicle No');
+    return;
+  }
+
+    const last4Digits = vehicleNo.slice(-4); // Extract last 4 digits
+
+    // Get current local date and time
+    const currentTime = new Date();
+
+    //Format local date as YYYY-MM-DD
+    const inDate = currentTime.toLocaleDateString('en-CA'); // en-CA gives YYYY-MM-DD format
+
+  const inTime = currentTime.toTimeString().split(' ')[0]; // HH:MM:SS
+
+  // Set the in_date and in_time fields in the form
+  document.getElementById('in_date').value = inDate;
+  document.getElementById('in_time').value = inTime;
+
+  fetch('/searchVehicle', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ last4Digits })
+  })
+    .then(res => res.json())
+    .then(data => {
+      const optionsDiv = document.getElementById('vehicle_options');
+      optionsDiv.innerHTML = '';
+
+      if (data.length === 0) {
+        alert('No vehicle found with the entered digits');
+        return;
+      }
+
+      if (data.length === 1) {
+        // Single match: auto-fill
+        document.getElementById('vehicle_no').value = data[0].vehicle_no;
+        document.getElementById('owner_name').value = data[0].owner_name;
+      } else {
+        optionsDiv.innerHTML = '<strong>Select Owner:</strong>';
+
+        data.forEach((item, index) => {
+          const optionId = `option_${index}`;
+
+          const radioHTML = `
+            <div class="radio-option" style="display: flex; gap: 10px;">
+              <input type="radio" name="ownerOption" id="${optionId}" 
+                     data-vehicleno="${item.vehicle_no}" 
+                     data-ownername="${item.owner_name}" 
+                     ${index === 0 ? 'checked' : ''}>
+              <label for="${optionId}">
+                ${item.vehicle_no} - ${item.owner_name}
+              </label>
+            </div>
+          `;
+          optionsDiv.innerHTML += radioHTML;
+        });
+
+        // Add event listener after creating radios
+        document.querySelectorAll('input[name="ownerOption"]').forEach(radio => {
+          radio.addEventListener('change', (e) => {
+            const selected = e.target;
+            const vehicleNo = selected.dataset.vehicleno;
+            const ownerName = selected.dataset.ownername;
+            fillVehicleData(vehicleNo, ownerName);
+          });
+        });
+
+        // Default fill first one
+        fillVehicleData(data[0].vehicle_no, data[0].owner_name);
+      }
+    })
+    .catch(err => {
+      alert('Vehicle not registered If you want add new vehicle click on New Registration');
+    });
+}
+
+// Helper function to fill vehicle info from selection
+function fillVehicleData(vehicleNo, ownerName) {
+  const vehicleInput = document.getElementById('vehicle_no');
+  const ownerInput = document.getElementById('owner_name');
+
+  if (!vehicleInput || !ownerInput) {
+    console.error('Form fields not found');
+    return;
+  }
+
+  vehicleInput.value = vehicleNo;
+  ownerInput.value = ownerName;
+}
+
+// Automatically fetch the username from localStorage
+const username = localStorage.getItem('username');
+
+if (!username) {
+  window.location.href = '/login.html';  // Redirect to login page if no user is logged in
+}
+
+function setUserInfo(username, location) {
+  document.getElementById("loggedInUsername").textContent = username;
+  document.getElementById("loggedInLocation").textContent = location;
+  document.getElementById("userAvatar").textContent = username.charAt(0).toUpperCase();
+}
+
+// Example usage:
+
+// Submit entry to daily_entries (with in-time and in-date)
+function submitEntry() {
+  const vehicleNo = document.getElementById('vehicle_no').value.trim();
+  const ownerName = document.getElementById('owner_name').value.trim();
+  const inTime = document.getElementById('in_time').value.trim();
+  const inDate = document.getElementById('in_date').value.trim();
+  const inBy = document.getElementById('guardSelect').value;
+ if (!inBy) {
+    alert('Please select a guard before In.');
+    return;
+  }
+
+  // console.log('Submitting entry with: ', { vehicleNo, ownerName, inTime, inDate });
+
+  if (!vehicleNo || !ownerName || !inTime || !inDate) {
+    alert('Please fill all fields');
+    return;
+  }
+
+  fetch('/submitEntry', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      vehicle_no: vehicleNo,
+      owner_name: ownerName,
+      username, // assuming it's already available globally
+      in_time: inTime,
+      in_by: inBy,
+      in_date: inDate
+    })
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.error) {
+        console.error('Error response:', data.error);
+        alert(data.error);
+      } else {
+        // console.log('Response data:', data);
+        // alert('Entry submitted successfully ');
+
+        // Clear fields
+        document.getElementById('vehicle_no').value = '';
+        document.getElementById('owner_name').value = '';
+        document.getElementById('in_time').value = '';
+        document.getElementById('in_date').value = '';
+        document.getElementById('vehicle_options').innerHTML = '';
+
+        // Set focus to vehicle number input for quick new entry
+        document.getElementById('vehicle_no').focus();
+      }
+
+      fetchEntries(); // Refresh the entries table
+    })
+    .catch(err => {
+      console.error('Fetch error:', err);
+      alert("This vehicle already inside company premises");
+    });
+}
+
+// Fetch and display recent entries
+function fetchEntries() {
+  fetch('/getEntries')
+    .then(res => res.json())
+    .then(data => {
+      const tbody = document.getElementById('entries_table').querySelector('tbody');
+      tbody.innerHTML = '';
+
+      const loggedInLocationRaw = localStorage.getItem('location');
+      const loggedInLocation = loggedInLocationRaw ? loggedInLocationRaw.trim().toUpperCase() : null;
+
+      const locationCounts = {};
+
+      data.forEach(entry => {
+        const location = entry.location ? entry.location.trim().toUpperCase() : '';
+        locationCounts[location] = (locationCounts[location] || 0) + 1;
+
+        const inTimeFormatted = entry.in_time ? formatTime(entry.in_time) : '';
+        const inDateFormatted = entry.in_date ? formatDDMMYYYY(entry.in_date) : '';
+
+        const duration = getDurationSinceInTime(entry.in_date, entry.in_time);
+
+        const row = document.createElement('tr');
+        const isAllowed = location === loggedInLocation;
+
+        // 🟡 Set date & time attributes for live duration update
+        row.setAttribute('data-in-time', entry.in_time);
+        row.setAttribute('data-in-date', entry.in_date);
+
+        row.innerHTML = `
+          <td>${entry.vehicle_no}</td>
+          <td>${entry.owner_name}</td>
+          <td>${location}</td>
+          <td>${inTimeFormatted}</td>
+          <td>${inDateFormatted}</td>
+          <td>${entry.in_by || ''}</td>
+          <td class="duration-cell">${duration}</td>
+          <td>
+            ${
+              isAllowed
+                ? `<button class="btn-out" onclick="markAsOut(${entry.id})">
+              Out <i class="fa-solid fa-right-from-bracket" style="margin-right:6px;"></i>
+                  </button>`
+                : `<span style="color: gray; font-style: italic;">Not allowed</span>`
+            }
+          </td>
+        `;
+        // console.log('DEBUG:', entry.in_date, entry.in_time);
+        // console.log('in_date:', entry.in_date);
+// console.log('in_time:', entry.in_time);
+
+
+        tbody.appendChild(row);
+      });
+
+      document.getElementById("vehicleCountDisplay").innerText =
+        `Vehicles Currently Inside Factory Premises: ${data.length}`;
+
+      const gateButtonsDiv = document.getElementById('gateButtons');
+      gateButtonsDiv.innerHTML = '';
+
+      Object.entries(locationCounts).forEach(([loc, count]) => {
+        const btn = document.createElement('button');
+        btn.textContent = `${loc}: ${count}`;
+        btn.classList.add('gate-btn');
+        btn.onclick = () => {
+          filterTableByLocation(loc);
+          setActiveButton(btn);
+        };
+        gateButtonsDiv.appendChild(btn);
+      });
+
+      const showAllBtn = document.createElement('button');
+      showAllBtn.textContent = 'Show All';
+      showAllBtn.classList.add('gate-btn', 'active');
+      showAllBtn.onclick = () => {
+        filterTableByLocation(null);
+        setActiveButton(showAllBtn);
+      };
+      gateButtonsDiv.appendChild(showAllBtn);
+
+      // Function to manage active state
+      function setActiveButton(activeBtn) {
+        const allButtons = document.querySelectorAll('#gateButtons button');
+        allButtons.forEach(btn => btn.classList.remove('active'));
+        activeBtn.classList.add('active');
+      }
+
+    })
+    .catch(err => {
+      console.error('Error loading entries:', err.message);
+    });
+}
+
+function formatDDMMYYYY(dateStr) {
+  if (!dateStr) return '';
+
+  // If dateStr is already 8 digits (DDMMYYYY), return as is
+  if (/^\d{8}$/.test(dateStr)) return dateStr;
+
+  const date = new Date(dateStr);
+  if (isNaN(date)) return ''; // invalid date
+
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+}
+
+
+function getDurationSinceInTime(inDateStr, inTimeStr) {
+  if (!inDateStr || !inTimeStr) return '-';
+
+  // Expected date format: DD-MM-YYYY
+  const dateParts = inDateStr.split('-');
+  if (dateParts.length !== 3) return '-';
+
+  const day = Number(dateParts[0]);
+  const month = Number(dateParts[1]) - 1; // Month is zero-based
+  const year = Number(dateParts[2]);
+
+  if (!day || !month || !year) return '-';
+
+  // Expected time format: HH:mm or HH:mm:ss
+  const timeParts = inTimeStr.split(':').map(Number);
+  if (timeParts.length < 2) return '-';
+
+  const hours = timeParts[0];
+  const minutes = timeParts[1];
+  const seconds = timeParts.length === 3 ? timeParts[2] : 0;
+
+  const inDateTime = new Date(year, month, day, hours, minutes, seconds);
+
+  if (isNaN(inDateTime.getTime())) return '-';
+
+  const now = new Date();
+  const diffMs = now - inDateTime;
+
+  if (diffMs < 0) return '-'; // Future time, invalid duration
+
+  const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+  const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+
+  if (diffHours > 0 && diffMinutes > 0) {
+    return `${diffHours}h ${diffMinutes}m`;
+  } else if (diffHours > 0) {
+    return `${diffHours}h`;
+  } else {
+    return `${diffMinutes}m`;
+  }
+}
+
+// Update durations every 60 seconds
+setInterval(() => {
+  const now = new Date();
+  document.querySelectorAll('tr[data-in-time][data-in-date]').forEach(row => {
+    const inTimeStr = row.getAttribute('data-in-time');
+    const inDateStr = row.getAttribute('data-in-date');
+
+    const duration = getDurationSinceInTime(inDateStr, inTimeStr);
+
+    row.querySelector('.duration-cell').textContent = duration;
+  });
+}, 60000);
+
+function filterTableByLocation(locationFilter) {
+  const rows = document.querySelectorAll('#entries_table tbody tr');
+  rows.forEach(row => {
+    const location = row.children[2].textContent.trim().toUpperCase(); // 3rd column is Location
+    if (!locationFilter || location === locationFilter) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+}
+
+async function markAsOut(id) {
+  if (!confirm('Mark this vehicle as OUT?')) return;
+
+  const outBy= document.getElementById('guardSelect').value;
+  if (!outBy) {
+    alert('Please select a guard before marking out.');
+    return;
+  }
+
+  try {
+    const response = await fetch(`/markAsOut/${id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ out_by: outBy })
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      fetchEntries(); // Refresh the table
+    } else {
+      alert('Error: ' + result.message);
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Error marking vehicle as out');
+  }
+}
+
+    
+// ensure search resets when table is re‑rendered
+function renderTable(entries) {
+      const tbody = document.querySelector('#entries_table tbody');
+      tbody.innerHTML = '';
+      entries.forEach(entry => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${entry.vehicle_no}</td>
+          <td>${entry.owner_name}</td>
+          <td>${entry.location}</td>
+          <td>${entry.in_time || ''}</td>
+          <td>${inDate}</td>
+          <td>
+            <button onclick="markAsOut(${entry.id})">Out</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+      // clear any previous filter and show all rows
+      document.getElementById('vehicleSearch').value = '';
+    }  
+   
+function filterTable() {
+    const term = document
+      .getElementById('vehicleSearch')
+      .value
+      .trim()
+      .toLowerCase();
+    // grab all body rows
+    const rows = document
+      .querySelectorAll('#entries_table tbody tr');
+
+    rows.forEach(row => {
+      // correct cell indices: 0=VehicleNo, 1=OwnerName, 2=Location
+      const vehicle = row.cells[0].textContent.toLowerCase();
+      const owner   = row.cells[1].textContent.toLowerCase();
+      const location= row.cells[2].textContent.toLowerCase();
+      // show if any field matches the search term
+      const match = 
+        vehicle.includes(term) ||
+        owner.includes(term) ||
+        location.includes(term);
+      row.style.display = match ? '' : 'none';
+    });
+  }
+
+function displayCurrentDate() {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');      // Ensures 2 digits
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
+    const year = today.getFullYear();
+    const formattedDate = `${day}-${month}-${year}`; // Format: DD-MM-YYYY
+    document.getElementById("currentDateDisplay").innerText = `Date: ${formattedDate}`;
+  }
+  
+function authMiddleware(req, res, next) {
+  if (req.session.user) {
+    next();
+  } else {
+    res.status(401).json({ message: 'Unauthorized. Please login.' });
+  }
+}
+
+// Call it on page load
+window.onload = function () {
+    displayCurrentDate();
+    fetchEntries(); // if want to also load entries immediately
+
+    document.getElementById('vehicle_no').addEventListener('keyup', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        searchVehicle();
+      }
+    });
+  };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Employee</title>
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 400px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #444;
+}
+
+form input[type="text"],
+form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+button[type="button"] {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button[type="button"]:hover {
+  background-color: #2aaad1;
+}
+
+#message {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #2d6a4f;
+}
+button[type="type"] {
+  width: 100%;
+  background-color: rgb(19, 19, 66);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add New Vehicle Details</h1>
+    <form id="employeeForm">
+      <label>Employee Name: <input type="text" name="owner_name" required></label><br>
+      <label>Designation: <input type="text" name="designation" required></label><br>
+      <label>Department: <input type="text" name="department" required></label><br>
+      <label>Emp ID: <input type="text" name="empid" required></label><br>
+      <label>Vehicle Number: <input type="text" name="vehicle_no" required> </label>
+      <button type="submit">Submit</button>
+      <button type="button" onclick="window.location.href = 'index.html';">Go to dashboard</button>
+
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('employeeForm');
+    const message = document.getElementById('message');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+  
+      try {
+  
+        // Step 2: Add the employee
+        const response = await fetch('/api/master_data/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+  
+        if (response.ok) {
+          message.textContent = "Details added successfully!";
+          message.style.color = "green";
+          form.reset();
+        } else {
+          message.textContent = "Do not add duplicate Vehicle number.";
+          message.style.color = "red";
+        }
+  
+      } catch (error) {
+        message.textContent = "Server error. Please try again.";
+        message.style.color = "red";
+        console.error("Error:", error);
+      }
+    });
+    </script>
+    
+</body>
+</html>

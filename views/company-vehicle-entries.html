@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/img/asb_icon.jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <title>Completed Entries</title>
+  <style>
+
+  body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 86%;
+  box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+}
+
+.super {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.heading-container i {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #2c3e50;
+}
+
+.heading-container h1 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+
+.sub table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sub th,
+.sub td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.sub th {
+  background-color: #2980b9;
+  color: white;
+  font-weight: 600;
+} 
+
+.sub tr:hover {
+  background-color: #f1f1f1;
+}
+
+.sub td {
+  color: #333;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.filters button {
+  padding: 0.5rem 1rem;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #21618c;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;}
+
+.filters-left {
+  display: flex;
+  gap: 1rem; /* space between items */
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa; /* light background */
+  border-radius: 8px;
+  flex-wrap: wrap; /* for responsiveness */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filters-left input[type="date"],
+.filters-left input[type="text"] {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.filters-left input[type="date"]:focus,
+.filters-left input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.filters-right {
+  display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: inherit;
+}
+
+/* Button 1: Export to Excel */
+.filters-right button:nth-child(1) {
+  background-color: #388e3c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filters-right button:nth-child(1):hover {
+  background-color: #2acc33;
+}
+
+/* Button 2: Back to Dashboard */
+.filters-right button:nth-child(2) {
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.filters-right button:nth-child(2):hover {
+  background-color: #45a0dd;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1.5px solid #ccc;
+  border-radius: 30px;
+  padding: 5px 16px;
+  max-width: 221px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.search-container i {
+  color: #888;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.search-container input[type="text"] {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 8px 0;
+  width: 100%;
+  outline: none;
+  color: #333;
+}
+
+.search-container input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Fullscreen overlay */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #dbeeff, #f3f9ff);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+  flex-direction: column;
+}
+
+/* Centered content */
+.custom-loader-content {
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.loader-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.loader-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 2;
+  }
+  50% {
+    transform: scale(2.1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+</style>
+</head>
+<body>
+<section>
+  <div class="super">
+    <div class="heading-container">
+      <h1><i class="fa-solid fa-building"></i> Completed Company Vehicle Entries</h1>
+    </div>
+
+    <div class="filters-container">
+      <div class="filters-left">
+        <input type="date" id="fromDate" />
+        <input type="date" id="toDate" />
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="vehicleSearch" placeholder="Search by Vehicle No, Owner or Location" />
+        </div>
+      </div>
+
+      <div class="filters-right">
+        <button onclick="exportToExcel()">Export to Excel <i class="fa-solid fa-file-excel"></i></button>
+        <button onclick="window.location.href='index.html'">Back to Dashboard <i class="fa-solid fa-right-from-bracket"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="loader-wrapper">
+    <div class="custom-loader-content">
+      <img src="/img/asb_icon.jpg" alt="App Logo" class="loader-logo" />
+    </div>
+  </div>
+
+  <div class="sub">
+    <table>
+      <thead>
+        <tr>
+          <th>Vehicle No</th>
+          <th>Owner</th>
+          <th>In Date</th>
+          <th>In Time</th>
+          <th>In By</th>
+          <th>Out Date</th>
+          <th>Out Time</th>
+          <th>Out By</th>
+          <th>Duration Inside</th>
+          <th>Location</th>
+          <th>Remark</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      <tbody id="entryTableBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader-wrapper');
+  if (loader) {
+    loader.style.opacity = '0';
+    setTimeout(() => loader.style.display = 'none', 1000);
+  }
+});
+
+function calculateDuration(inDate, inTime, outDate, outTime) {
+  const inDateTime = new Date(inDate + "T" + inTime);
+  const outDateTime = new Date(outDate + "T" + outTime);
+  const duration = outDateTime - inDateTime;
+
+  const hours = Math.floor(duration / (1000 * 60 * 60));
+  const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+  return `${hours}h ${minutes}m`;
+}
+
+function formatTime(timeStr) {
+  const [hours, minutes] = timeStr.split(':');
+  return `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}`;
+}
+
+async function loadCompletedCompanyEntries() {
+  try {
+    const res = await fetch("/api/company_vehicle_entries");
+    const entries = await res.json();
+
+    const tableBody = document.getElementById("entryTableBody");
+    tableBody.innerHTML = "";
+
+    entries.sort((a, b) => new Date(b.in_date + 'T' + b.in_time) - new Date(a.in_date + 'T' + a.in_time));
+
+    entries.forEach(entry => {
+      const inDate = entry.in_date ? new Date(entry.in_date).toLocaleDateString('en-CA') : '';
+      const inTime = entry.in_time ? formatTime(entry.in_time) : '';
+      const outDate = entry.out_date ? new Date(entry.out_date).toLocaleDateString('en-CA') : '';
+      const outTime = entry.out_time ? formatTime(entry.out_time) : '';
+      const duration = inDate && inTime && outDate && outTime ? calculateDuration(inDate, inTime, outDate, outTime) : '-';
+      const remarkCell = entry.remark
+        ? `<td>${entry.remark}</td><td>-</td>`
+          : `<td><input type="text" id="remark-${entry.id}" placeholder="Enter remark" /></td>
+           <td><button onclick="saveRemark(${entry.id})">Save</button></td>`;
+
+      tableBody.innerHTML += `
+  <tr>
+    <td>${entry.vehicle_no}</td>
+    <td>${entry.owner_name}</td>
+    <td>${inDate}</td>
+    <td>${inTime}</td>
+    <td>${entry.in_by || '-'}</td>
+    <td>${outDate}</td>
+    <td>${outTime}</td>
+    <td>${entry.out_by || '-'}</td>
+    <td>${duration}</td>
+    <td>${entry.location}</td>
+     ${remarkCell}
+ 
+  </tr>
+`;
+
+    });
+  } catch (error) {
+    console.error("Error loading company vehicle entries:", error);
+    alert("Failed to load company vehicle entries.");
+  }
+}
+
+function filterTable() {
+  const search = document.getElementById("vehicleSearch").value.toLowerCase();
+  const from = document.getElementById("fromDate").value;
+  const to = document.getElementById("toDate").value;
+
+  const rows = document.querySelectorAll("#entryTableBody tr");
+
+  rows.forEach(row => {
+    const cells = row.querySelectorAll("td");
+    const vehicle = cells[0].textContent.toLowerCase();
+    const owner = cells[1].textContent.toLowerCase();
+    const location = cells[9].textContent.toLowerCase();
+    const inBy = cells[4].textContent.toLowerCase();
+    const outBy = cells[7].textContent.toLowerCase();
+    const inDate = cells[2].textContent;
+
+    let visible = true;
+
+    if (search && !(vehicle.includes(search) || owner.includes(search) || location.includes(search) || inBy.includes(search) || outBy.includes(search))) {
+      visible = false;
+    }
+
+    if (from && inDate < from) visible = false;
+    if (to && inDate > to) visible = false;
+
+    row.style.display = visible ? "" : "none";
+  });
+}
+
+function exportToExcel() {
+  const tableRows = document.querySelectorAll("#entryTableBody tr");
+  const headers = ["Vehicle No", "Owner Name", "In Date", "In Time", "In By", "Out Date", "Out Time", "Out By", "Duration Inside", "Location"];
+  const rows = [headers];
+
+  tableRows.forEach(row => {
+    if (row.style.display !== "none") {
+      const rowData = Array.from(row.cells).map(cell => cell.textContent.trim());
+      rows.push(rowData);
+    }
+  });
+
+  if (rows.length === 1) {
+    alert("No data to export based on current filters.");
+    return;
+  }
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Company Vehicle Entries");
+
+  const today = new Date().toISOString().slice(0, 10);
+  XLSX.writeFile(wb, `Company_Vehicle_Entries_${today}.xlsx`);
+}
+
+async function saveRemark(id) {
+  const input = document.getElementById(`remark-${id}`);
+  const remark = input.value.trim();
+
+  if (!remark) {
+    alert("Please enter a remark.");
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/company_vehicle_entries/${id}/remark`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ remark })
+    });
+
+    if (res.ok) {
+      // Replace input and button with static text
+      const inputTd = input.parentElement;
+      const buttonTd = inputTd.nextElementSibling;
+      inputTd.innerHTML = remark;
+      buttonTd.innerHTML = '-';
+    } else {
+      const result = await res.json();
+      alert('Failed to save remark: ' + result.message);
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Error saving remark.');
+  }
+}
+
+document.getElementById("vehicleSearch").addEventListener("keyup", filterTable);
+document.getElementById("fromDate").addEventListener("change", filterTable);
+document.getElementById("toDate").addEventListener("change", filterTable);
+window.onload = loadCompletedCompanyEntries;
+</script>
+</body>
+</html>

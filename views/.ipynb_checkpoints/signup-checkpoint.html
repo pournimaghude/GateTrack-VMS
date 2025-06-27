@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <style>
+    /* General reset and body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f7fc;
+}
+
+.signup-box {
+  width: 350px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.signup-box h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.button-group {
+  text-align: center;
+}
+
+.button-group button {
+  width: 100%;
+  padding: 12px;
+  background-color: #259ac9;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-group button:hover {
+  background-color: #0056b3;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="signup-box">
+      <h1>Signup</h1>
+
+      <form id="signup-form">
+        <div class="input-group">
+          <label for="username">Name:</label>
+          <input type="text" id="username" name="username" />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Username:</label>
+          <input type="email" id="email" name="email" />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+        </div>
+
+        <div class="input-group">
+          <label for="location">Location:</label>
+          <select id="location" name="location">
+            <option value="">Select Location</option>
+            <option value="B85">B85</option>
+            <option value="E9">E9</option>
+            <option value="FA2">FA2</option>
+            <option value="C7">C7</option>
+            <option value="D4">D4</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button type="button" onclick="signup()">Signup</button>
+        </div>
+
+        <div class="login-link">
+          <p>Already have an account? <a href="/login.html">Login here</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+
+    function signup() {
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const location = document.getElementById('location').value;
+
+      if (!username || !email || !password || !location) {
+        alert('Please fill out all fields');
+        return;
+      }
+
+      fetch('/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password, location }, )
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.message === 'Signup successful') {
+          window.location.href = '/login.html';  // Redirect to login page after successful signup
+        } else {
+          alert(data.message || 'Signup failed');
+        }
+      })
+      .catch(err => {
+        console.error('Error during signup:', err);
+        alert('Error during signup');
+      });
+    }
+  </script>
+
+</body>
+</html>
