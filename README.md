@@ -28,7 +28,7 @@ GateTrack-VMS is a real-time vehicle entry management system built to assist sec
 
 ## 🔗 Links
 
-- 🔹 [LinkedIn Profile](https://www.linkedin.com/in/pournima-ghude)
+- 🔹 [LinkedIn Profile](https://www.linkedin.com/in/pournima-ghude-822546202/)
 - 🔹 [GitHub Repository](https://github.com/pournimaghude/GateTrack-VMS)
 
 ---
