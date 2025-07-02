@@ -105,7 +105,7 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 ||
 |entry stored| ![Complete vehicle entries Table](https://github.com/user-attachments/assets/88a890ae-f4e1-4d52-94b3-2996afaa0315) | Works smoothly on mobile devices |
 ||
-| |![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | Works smoothly on mobile devices |
+|current logged-in user|![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | Works smoothly on mobile devices |
 ||
 |Mobile view |![Mobile View](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)| Works smoothly on mobile devices |
 
