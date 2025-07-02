@@ -71,31 +71,18 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 | ![Date Filter](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e) | Filter vehicle data by custom date range |
 | ![Mark Out](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6) | Guard selection while marking vehicle OUT |
 | ![Company Vehicles](https://github.com/user-attachments/assets/22164799-11f9-4cbf-9204-a51a73590912) | Separate records for company vehicles |
-| ![Mobile View](![image](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)) | Works smoothly on mobile devices |
-
-![image]()
-
-![image]()
-
-![image]()
-
-![image]()
-![image]()
-![image]()
-![image]()
-![image](https://github.com/user-attachments/assets/4cf4d7ed-67ff-430e-81c2-603dfc04c9d6)
-![image](https://github.com/user-attachments/assets/fa89b88d-eb9f-4cad-9368-7bcd047a44f9)
-![image](https://github.com/user-attachments/assets/88a890ae-f4e1-4d52-94b3-2996afaa0315)
-![image](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a)
-![image](https://github.com/user-attachments/assets/a93e13f6-0d94-4497-8127-db536fe3649a)
-![image](https://github.com/user-attachments/assets/c1dbd63d-e711-4d28-872b-0e683ed2ee5c)
-![image](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed)
-![image](https://github.com/user-attachments/assets/be1ee9f9-3939-4cfd-972d-c3cc0c2532b4)
-![image](https://github.com/user-attachments/assets/f7fcc5ea-a197-44fe-bb08-3acccc36e5d5)
-![image](https://github.com/user-attachments/assets/58276cd2-adc2-45c3-8a6d-dc6e727eb492)
-![image](https://github.com/user-attachments/assets/4b6025a4-fb13-4d05-8b31-04239d7fa87e)
-![image]()
-![image](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1)
+| ![Mobile View](https://github.com/user-attachments/assets/4cf4d7ed-67ff-430e-81c2-603dfc04c9d6) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/fa89b88d-eb9f-4cad-9368-7bcd047a44f9) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/88a890ae-f4e1-4d52-94b3-2996afaa0315) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/a93e13f6-0d94-4497-8127-db536fe3649a)| Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/c1dbd63d-e711-4d28-872b-0e683ed2ee5c) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/f7fcc5ea-a197-44fe-bb08-3acccc36e5d5)| Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/58276cd2-adc2-45c3-8a6d-dc6e727eb492) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/4b6025a4-fb13-4d05-8b31-04239d7fa87e) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | Works smoothly on mobile devices |
+| ![Mobile View](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)| Works smoothly on mobile devices |
 
 
 
