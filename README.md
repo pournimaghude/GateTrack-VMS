@@ -67,7 +67,7 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 ||
 |Signup Page| ![Signup Page](https://github.com/user-attachments/assets/696fbe1b-3929-4b67-95d8-676474520498) | Register new users with location |
 ||
-|Registration| ![Registration](https://github.com/user-attachments/assets/063177f3-7d31-431a-b8c6-607d6f57e17d) | Enter vehicle number, owner, and time |
+|Registration| ![Registration](https://github.com/user-attachments/assets/6b1e32d0-30fb-437b-966b-c4745631bc8c) | Enter vehicle number, owner, and time |
 ||
 |Dashboard| ![Dashboard](https://github.com/user-attachments/assets/a26c6d3d-ea1f-408a-a2b4-bf4b76b2bd25) | Tracks in/out time with durations |
 ||
