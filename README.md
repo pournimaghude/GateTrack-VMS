@@ -57,63 +57,34 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 -  Realtime searchable vehicle data
 -  Built with practical, industry-oriented tools
 
-## Screenshots
-
 ## 📸 Screenshots
 
-|name | Screenshot | Description |
-|---|------------|-------------|
-|Login Page|![Login Page](https://github.com/user-attachments/assets/6c20f8ac-b417-4a38-9ca0-892303ef3ce5) | Secure login with username and password|
-||
-|Signup Page| ![Signup Page](https://github.com/user-attachments/assets/696fbe1b-3929-4b67-95d8-676474520498) | Register new users with location enter details |
-||
-|Registration| ![Registration](https://github.com/user-attachments/assets/6b1e32d0-30fb-437b-966b-c4745631bc8c) | Enter vehicle number, owner, department, designation, empid|
-||
-|Dashboard| ![Dashboard](https://github.com/user-attachments/assets/a26c6d3d-ea1f-408a-a2b4-bf4b76b2bd25) | Tracks in/out time with durations |
-||
-|current logged-in user|![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | displaying which user currently login username and from which gate logged in |
-||
-|Search window |![search-vehicle](https://github.com/user-attachments/assets/347bea43-ebf4-4abf-8772-f8d7211e7bee) |enter vehicle last digit / if less than 4 digits enter then it will thow notification|
-||
-|Search window |![search-vehicle](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e) |enter last 4 digit and click search button it will fetch owner name from db and in time/date from system|
-||
-|select guard & submit| ![Mark Out](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6) | select guard before submitting entry. if your try to submit entry without select guard it will through notification |
-||
-|daily entries table |![daily-entries](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a) | dailyentries stored in this table with vehicle_no, owner_name, in time/date, guard name, duration inside and out button|
-||
-|Out vehicle|![out-vehicle](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed) |which vehicle out from company then search vehicle and  marking vehicle OUT |
-||
-|validation|![Mobile View](https://github.com/user-attachments/assets/530250cc-6c89-4af6-9cd3-ce57c5938914)| if username login with different gate it will not allowed to vehicle out from another gate only given access that user in vehicle for out |
-||
-|searching|![searching](https://github.com/user-attachments/assets/4d361318-d85c-48f3-928a-28b2dd9eb061) | Export any filtered data to Excel |
-||
-|validation| ![validation](https://github.com/user-attachments/assets/4cf4d7ed-67ff-430e-81c2-603dfc04c9d6) | Works smoothly on mobile devices |
-||
-|validation| ![validation](https://github.com/user-attachments/assets/fa89b88d-eb9f-4cad-9368-7bcd047a44f9) | Works smoothly on mobile devices |
-||
-|entry-stored| ![entry-stored](https://github.com/user-attachments/assets/a93e13f6-0d94-4497-8127-db536fe3649a)| Works smoothly on mobile devices |
-||
-|searching|![searching](https://github.com/user-attachments/assets/d8da6fcf-70d3-48e3-9838-52f1815d9a50) | Export any filtered data to Excel |
-||
-|Company vehicle |![Mobile View](https://github.com/user-attachments/assets/c1dbd63d-e711-4d28-872b-0e683ed2ee5c) | Works smoothly on mobile devices |
-||
-|entry stored| ![Complete vehicle entries Table](https://github.com/user-attachments/assets/88a890ae-f4e1-4d52-94b3-2996afaa0315) | Works smoothly on mobile devices |
-||
-|Master Data Tab| ![Master Data](https://github.com/user-attachments/assets/d8727ddc-ad9e-4f27-aa7e-70e409b72e57) | Tracks in/out time with durations |
-||
-|Master Data| ![Master Data](https://github.com/user-attachments/assets/f7fcc5ea-a197-44fe-bb08-3acccc36e5d5)| Works smoothly on mobile devices |
-||
-|vehicle entries Tab| ![vehicle entries](https://github.com/user-attachments/assets/58276cd2-adc2-45c3-8a6d-dc6e727eb492) | Works smoothly on mobile devices |
-||
-|Complete vehicle entries Table| ![Vehicle table](https://github.com/user-attachments/assets/4b6025a4-fb13-4d05-8b31-04239d7fa87e) | Works smoothly on mobile devices |
-||
-|Company vehicle entries Tab| ![Company Vehicles](https://github.com/user-attachments/assets/22164799-11f9-4cbf-9204-a51a73590912) | Separate records for company vehicles |
-||
-|Complete Company vehicle entries Table| ![Complete vehicle entries Table](https://github.com/user-attachments/assets/31fc2927-77eb-4739-8dd0-011293b6d7d5) | Works smoothly on mobile devices |
-||
-|Mobile view |![Mobile View](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)| Works smoothly on mobile devices |
-
-
+| Screenshot Name                       | Screenshot                                                                                                         | Description                                                                               |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| **Login Page**                        | ![Login Page](https://github.com/user-attachments/assets/6c20f8ac-b417-4a38-9ca0-892303ef3ce5)                     | Secure login using a valid username and password.                                         |
+| **Signup Page**                       | ![Signup Page](https://github.com/user-attachments/assets/696fbe1b-3929-4b67-95d8-676474520498)                    | New users can register with details like name, email, password, and gate location.        |
+| **Vehicle Registration**              | ![Registration](https://github.com/user-attachments/assets/6b1e32d0-30fb-437b-966b-c4745631bc8c)                   | Enter vehicle number, owner name, department, designation, and employee ID for new entry. |
+| **Dashboard**                         | ![Dashboard](https://github.com/user-attachments/assets/a26c6d3d-ea1f-408a-a2b4-bf4b76b2bd25)                      | Displays in/out times with calculated durations of parked vehicles.                       |
+| **Logged-In User Info**               | ![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1)                    | Shows the current user login and assigned gate location.                                  |
+| **Invalid Vehicle Search Validation** | ![search-vehicle](https://github.com/user-attachments/assets/347bea43-ebf4-4abf-8772-f8d7211e7bee)                 | Alerts when entering less than 4 digits of a vehicle number.                              |
+| **Valid Vehicle Search**              | ![search-vehicle](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e)                 | Entering last 4 digits fetches owner info and sets in time/date automatically.            |
+| **Guard Selection Validation**        | ![Mark Out](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6)                       | System asks to select a guard before submitting an entry.                                 |
+| **Daily Entries Table**               | ![daily-entries](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a)                  | Shows current in-vehicles with out button, guard, and timestamps.                         |
+| **Mark Vehicle Out**                  | ![out-vehicle](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed)                    | Process to search and mark a vehicle out of the company.                                  |
+| **Confirmation Before Out**           | ![validation](https://github.com/user-attachments/assets/4cf4d7ed-67ff-430e-81c2-603dfc04c9d6)                     | Prompt asking confirmation before marking vehicle as OUT.                                 |
+| **Guard Not Selected Validation**     | ![validation](https://github.com/user-attachments/assets/fa89b88d-eb9f-4cad-9368-7bcd047a44f9)                     | Warning if trying to mark OUT without selecting a guard.                                  |
+| **Gate Access Restriction**           | ![Mobile View](https://github.com/user-attachments/assets/530250cc-6c89-4af6-9cd3-ce57c5938914)                    | Restricts marking out if the logged-in user belongs to another gate.                      |
+| **Entry Stored After Out**            | ![entry-stored](https://github.com/user-attachments/assets/a93e13f6-0d94-4497-8127-db536fe3649a)                   | After marking OUT, entry is moved to permanent table.                                     |
+| **Company Vehicle Entry**             | ![searching](https://github.com/user-attachments/assets/d8da6fcf-70d3-48e3-9838-52f1815d9a50)                      | If owner name is “COMPANY VEHICLE”, special handling is applied.                          |
+| **Company Vehicle Handling**          | ![Mobile View](https://github.com/user-attachments/assets/c1dbd63d-e711-4d28-872b-0e683ed2ee5c)                    | Company-owned vehicles are stored in a separate table.                                    |
+| **Company Vehicle Entries Table**     | ![Complete vehicle entries Table](https://github.com/user-attachments/assets/88a890ae-f4e1-4d52-94b3-2996afaa0315) | Table showing entries of all company vehicles with remarks.                               |
+| **Master Data Tab**                   | ![Master Data](https://github.com/user-attachments/assets/d8727ddc-ad9e-4f27-aa7e-70e409b72e57)                    | Tab containing employee and company vehicle data.                                         |
+| **Employee Vehicle Details**          | ![Master Data](https://github.com/user-attachments/assets/f7fcc5ea-a197-44fe-bb08-3acccc36e5d5)                    | Contains emp ID, vehicle number, designation, etc.                                        |
+| **Vehicle Entries Tab**               | ![vehicle entries](https://github.com/user-attachments/assets/58276cd2-adc2-45c3-8a6d-dc6e727eb492)                | Complete history of vehicle movements.                                                    |
+| **Vehicle Entries Table View**        | ![Vehicle table](https://github.com/user-attachments/assets/4b6025a4-fb13-4d05-8b31-04239d7fa87e)                  | Shows all entries with duration, filtering, and export options.                           |
+| **Company Vehicle Entries Tab**       | ![Company Vehicles](https://github.com/user-attachments/assets/22164799-11f9-4cbf-9204-a51a73590912)               | Tab specifically for company-owned vehicles.                                              |
+| **Complete Company Vehicle Table**    | ![Complete vehicle entries Table](https://github.com/user-attachments/assets/31fc2927-77eb-4739-8dd0-011293b6d7d5) | Contains detailed remarks for company vehicle usage.                                      |
+| **Mobile View**                       | ![Mobile View](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)                    | Fully responsive UI optimized for mobile screen sizes.                                    |
 
 
 
