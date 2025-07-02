@@ -119,10 +119,19 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
     - Live Table Updates, Reflects entry/exits instantly without page reloads
 
 
+![image](https://github.com/user-attachments/assets/b31c72c1-b41e-4a5c-968f-3ac00359a0f3)
 
+## Possible Improvements
+- OTP-based or RFID-based IN/OUT
+- Attendance Integration
+- Notification via Email/SMS
+- Deploy on cloud with CI/CD
+- Add PDF Export
+- Vehicle image capture
+- RFID based entries
 
-
-
+## 📝 License
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — feel free to use, modify, and distribute with credit.
 
 
 
