@@ -87,6 +87,42 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 | **Mobile View**                       | ![Mobile View](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)                    | Fully responsive UI optimized for mobile screen sizes.                                    |
 
 
+## DATABASE DESIGN 
+- **users table** stores login and signup data
+- **daily-entries** table stores vehicle records. Each entry includes vehicle-number, owner-name, location, in-time, and in-date, in_by, duration_inside, Action.
+- **master-data table** store employee's details, Vehicle_number, Owner_name, Department, Designation, Empid, etc.
+- **vehicle-entries table** store vehicle complete record. Each entry includes vehicle number, owner name, location, in-time, in-date, out-date and out-time, in_by, out_by, duration_inside.
+- **company-vehicle-entries table** store company owned vehicles record. Each entry includes vehicle number, owner name, location, in-time, in-date, out-date and out-time, in_by, out_by, duration_inside, Remark.
+
+## Deployment
+  - **Status:** Fully Developed & In Use.
+  - **Organization:** Deployed at ASB International Pvt Ltd.
+  - **Deployment Mode:** On-Premises (Hosted on internal organizational server).
+  - **Network:** Secure LAN (Local Area Network), accessed via multiple gate terminals and office systems.
+  - **Access Type:**
+    - 📱 **Mobile Devices** – Used by guards at gates for vehicle in/out marking.
+    -  🖥️ **PC/Desktop** – Used by admins/supervisors for monitoring, data export, and report analysis.
+  - **Device Compatibility:** Fully responsive – adapts to both mobile and desktop screens.
+  - **Purpose and Business Benefits,**
+    - Gate Security Automation
+    - Entry/Exit Monitoring
+    - Centralized Vehicle Logs
+    - Intelligent Vehicle Classification
+    - Instant Reporting, Get date-wise or location-wise logs instantly without manual effort
+    - Guard Accountability, Tracks which guard submitted the entry and exit, ensuring traceability
+    - Auto Duration Calculation, Captures how long a vehicle remained inside the premises
+    - User location Control System designed for location-based access
+    - Designed for Multi-Gate Operations, Supports tracking from multiple gates like Gate A1, A2, etc.
+    - Real-Time Entry Validation
+    - Mobile-Friendly: Works seamlessly on gate-side mobile devices/tablets
+    - Company Vehicle Remarks, captures usage purpose for company-owned vehicles (e.g., delivery, visitor, etc.)
+    - Live Table Updates, Reflects entry/exits instantly without page reloads
+
+
+
+
+
+
 
 
 
