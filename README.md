@@ -71,17 +71,7 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 ||
 |Dashboard| ![Dashboard](https://github.com/user-attachments/assets/a26c6d3d-ea1f-408a-a2b4-bf4b76b2bd25) | Tracks in/out time with durations |
 ||
-|Master Data Tab| ![Master Data](https://github.com/user-attachments/assets/d8727ddc-ad9e-4f27-aa7e-70e409b72e57) | Tracks in/out time with durations |
-||
-|Master Data| ![Master Data](https://github.com/user-attachments/assets/f7fcc5ea-a197-44fe-bb08-3acccc36e5d5)| Works smoothly on mobile devices |
-||
-|vehicle entries Tab| ![vehicle entries](https://github.com/user-attachments/assets/58276cd2-adc2-45c3-8a6d-dc6e727eb492) | Works smoothly on mobile devices |
-||
-|Complete vehicle entries Table| ![Vehicle table](https://github.com/user-attachments/assets/4b6025a4-fb13-4d05-8b31-04239d7fa87e) | Works smoothly on mobile devices |
-||
-|Company vehicle entries Tab| ![Company Vehicles](https://github.com/user-attachments/assets/22164799-11f9-4cbf-9204-a51a73590912) | Separate records for company vehicles |
-||
-|Complete Company vehicle entries Table| ![Complete vehicle entries Table](https://github.com/user-attachments/assets/31fc2927-77eb-4739-8dd0-011293b6d7d5) | Works smoothly on mobile devices |
+|current logged-in user|![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | Works smoothly on mobile devices |
 ||
 |Search window |![search-vehicle](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e) |enter last 4 digit |
 ||
@@ -90,6 +80,8 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 |daily entries table |![daily-entries](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a) | Works smoothly on mobile devices |
 ||
 |Out vehicle|![out-vehicle](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed) | Works smoothly on mobile devices |
+||
+|Mobile view |![Mobile View](https://github.com/user-attachments/assets/530250cc-6c89-4af6-9cd3-ce57c5938914)| Works smoothly on mobile devices |
 ||
 |searching|![searching](https://github.com/user-attachments/assets/4d361318-d85c-48f3-928a-28b2dd9eb061) | Export any filtered data to Excel |
 ||
@@ -105,10 +97,19 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 ||
 |entry stored| ![Complete vehicle entries Table](https://github.com/user-attachments/assets/88a890ae-f4e1-4d52-94b3-2996afaa0315) | Works smoothly on mobile devices |
 ||
-|current logged-in user|![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | Works smoothly on mobile devices |
+|Master Data Tab| ![Master Data](https://github.com/user-attachments/assets/d8727ddc-ad9e-4f27-aa7e-70e409b72e57) | Tracks in/out time with durations |
+||
+|Master Data| ![Master Data](https://github.com/user-attachments/assets/f7fcc5ea-a197-44fe-bb08-3acccc36e5d5)| Works smoothly on mobile devices |
+||
+|vehicle entries Tab| ![vehicle entries](https://github.com/user-attachments/assets/58276cd2-adc2-45c3-8a6d-dc6e727eb492) | Works smoothly on mobile devices |
+||
+|Complete vehicle entries Table| ![Vehicle table](https://github.com/user-attachments/assets/4b6025a4-fb13-4d05-8b31-04239d7fa87e) | Works smoothly on mobile devices |
+||
+|Company vehicle entries Tab| ![Company Vehicles](https://github.com/user-attachments/assets/22164799-11f9-4cbf-9204-a51a73590912) | Separate records for company vehicles |
+||
+|Complete Company vehicle entries Table| ![Complete vehicle entries Table](https://github.com/user-attachments/assets/31fc2927-77eb-4739-8dd0-011293b6d7d5) | Works smoothly on mobile devices |
 ||
 |Mobile view |![Mobile View](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)| Works smoothly on mobile devices |
-
 
 
 
