@@ -11,7 +11,7 @@
 <h3>👩‍💻 Author: Pournima Ghude</h3>
 <p>
   <a href="https://www.linkedin.com/in/pournima-ghude" target="_blank">
-    <img src="https://img.icons8.com/color/30/000000/linkedin.png" alt="LinkedIn Icon" />
+    <img src="https://www.linkedin.com/in/pournima-ghude-822546202/" alt="LinkedIn Icon" />
    
   </a>
 </p>
