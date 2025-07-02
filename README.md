@@ -63,26 +63,26 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 
 | Screenshot | Description |
 |------------|-------------|
-| ![Login Page](screenshots/screenshot-login.png) | Secure login for guards and admins |
-| ![Signup Page](screenshots/screenshot-signup.png) | Register new users with location |
-| ![Vehicle Entry](screenshots/screenshot-entry-form.png) | Enter vehicle number, owner, and time |
-| ![Completed Table](screenshots/screenshot-completed.png) | Tracks in/out time with durations |
-| ![Excel Export](screenshots/screenshot-export.png) | Export any filtered data to Excel |
-| ![Date Filter](screenshots/screenshot-datefilter.png) | Filter vehicle data by custom date range |
-| ![Mark Out](screenshots/screenshot-mark-out.png) | Guard selection while marking vehicle OUT |
-| ![Company Vehicles](screenshots/screenshot-company-tab.png) | Separate records for company vehicles |
-| ![Mobile View](screenshots/screenshot-mobile-view.png) | Works smoothly on mobile devices |
+| ![Login Page](https://github.com/user-attachments/assets/6c20f8ac-b417-4a38-9ca0-892303ef3ce5) | Secure login for guards and admins |
+| ![Signup Page](https://github.com/user-attachments/assets/696fbe1b-3929-4b67-95d8-676474520498) | Register new users with location |
+| ![Registration](https://github.com/user-attachments/assets/063177f3-7d31-431a-b8c6-607d6f57e17d) | Enter vehicle number, owner, and time |
+| ![Dashboard](https://github.com/user-attachments/assets/d8727ddc-ad9e-4f27-aa7e-70e409b72e57) | Tracks in/out time with durations |
+| ![Excel Export](https://github.com/user-attachments/assets/4d361318-d85c-48f3-928a-28b2dd9eb061) | Export any filtered data to Excel |
+| ![Date Filter](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e) | Filter vehicle data by custom date range |
+| ![Mark Out](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6) | Guard selection while marking vehicle OUT |
+| ![Company Vehicles](https://github.com/user-attachments/assets/22164799-11f9-4cbf-9204-a51a73590912) | Separate records for company vehicles |
+| ![Mobile View](![image](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)) | Works smoothly on mobile devices |
 
-![image](https://github.com/user-attachments/assets/696fbe1b-3929-4b67-95d8-676474520498)
+![image]()
 
-![image](https://github.com/user-attachments/assets/6c20f8ac-b417-4a38-9ca0-892303ef3ce5)
+![image]()
 
-![image](https://github.com/user-attachments/assets/063177f3-7d31-431a-b8c6-607d6f57e17d)
+![image]()
 
-![image](https://github.com/user-attachments/assets/d8727ddc-ad9e-4f27-aa7e-70e409b72e57)
-![image](https://github.com/user-attachments/assets/4d361318-d85c-48f3-928a-28b2dd9eb061)
-![image](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e)
-![image](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6)
+![image]()
+![image]()
+![image]()
+![image]()
 ![image](https://github.com/user-attachments/assets/4cf4d7ed-67ff-430e-81c2-603dfc04c9d6)
 ![image](https://github.com/user-attachments/assets/fa89b88d-eb9f-4cad-9368-7bcd047a44f9)
 ![image](https://github.com/user-attachments/assets/88a890ae-f4e1-4d52-94b3-2996afaa0315)
@@ -94,7 +94,7 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 ![image](https://github.com/user-attachments/assets/f7fcc5ea-a197-44fe-bb08-3acccc36e5d5)
 ![image](https://github.com/user-attachments/assets/58276cd2-adc2-45c3-8a6d-dc6e727eb492)
 ![image](https://github.com/user-attachments/assets/4b6025a4-fb13-4d05-8b31-04239d7fa87e)
-![image](https://github.com/user-attachments/assets/22164799-11f9-4cbf-9204-a51a73590912)
+![image]()
 ![image](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1)
 
 
