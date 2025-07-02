@@ -83,24 +83,26 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 ||
 |Complete Company vehicle entries Table| ![Complete vehicle entries Table](https://github.com/user-attachments/assets/88a890ae-f4e1-4d52-94b3-2996afaa0315) | Works smoothly on mobile devices |
 ||
-| |![Excel Export](https://github.com/user-attachments/assets/4d361318-d85c-48f3-928a-28b2dd9eb061) | Export any filtered data to Excel |
+|Search window |![search-vehicle](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e) |enter last 4 digit |
 ||
-| |![Date Filter](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e) | Filter vehicle data by custom date range |
+|select guard & submit| ![Mark Out](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6) | Guard selection while marking vehicle OUT |
 ||
-| ![Mark Out](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6) | Guard selection while marking vehicle OUT |
+|daily entries table |![daily-entries](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a) | Works smoothly on mobile devices |
 ||
+| Out vehicle|![out-vehicle](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed) | Works smoothly on mobile devices |
+||
+||![searching](https://github.com/user-attachments/assets/4d361318-d85c-48f3-928a-28b2dd9eb061) | Export any filtered data to Excel |
+||
+
 | ![Mobile View](https://github.com/user-attachments/assets/4cf4d7ed-67ff-430e-81c2-603dfc04c9d6) | Works smoothly on mobile devices |
 ||
 | ![Mobile View](https://github.com/user-attachments/assets/fa89b88d-eb9f-4cad-9368-7bcd047a44f9) | Works smoothly on mobile devices |
-||
-| ![Mobile View](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a) | Works smoothly on mobile devices |
 ||
 | ![Mobile View](https://github.com/user-attachments/assets/a93e13f6-0d94-4497-8127-db536fe3649a)| Works smoothly on mobile devices |
 ||
 | ![Mobile View](https://github.com/user-attachments/assets/c1dbd63d-e711-4d28-872b-0e683ed2ee5c) | Works smoothly on mobile devices |
 ||
-| ![Mobile View](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed) | Works smoothly on mobile devices |
-||
+
 | ![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | Works smoothly on mobile devices |
 ||
 | ![Mobile View](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)| Works smoothly on mobile devices |
