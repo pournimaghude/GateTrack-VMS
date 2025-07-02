@@ -63,25 +63,27 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 
 |name | Screenshot | Description |
 |---|------------|-------------|
-|Login Page|![Login Page](https://github.com/user-attachments/assets/6c20f8ac-b417-4a38-9ca0-892303ef3ce5) | Secure login for guards and admins |
+|Login Page|![Login Page](https://github.com/user-attachments/assets/6c20f8ac-b417-4a38-9ca0-892303ef3ce5) | Secure login with username and password|
 ||
-|Signup Page| ![Signup Page](https://github.com/user-attachments/assets/696fbe1b-3929-4b67-95d8-676474520498) | Register new users with location |
+|Signup Page| ![Signup Page](https://github.com/user-attachments/assets/696fbe1b-3929-4b67-95d8-676474520498) | Register new users with location enter details |
 ||
-|Registration| ![Registration](https://github.com/user-attachments/assets/6b1e32d0-30fb-437b-966b-c4745631bc8c) | Enter vehicle number, owner, and time |
+|Registration| ![Registration](https://github.com/user-attachments/assets/6b1e32d0-30fb-437b-966b-c4745631bc8c) | Enter vehicle number, owner, department, designation, empid|
 ||
 |Dashboard| ![Dashboard](https://github.com/user-attachments/assets/a26c6d3d-ea1f-408a-a2b4-bf4b76b2bd25) | Tracks in/out time with durations |
 ||
-|current logged-in user|![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | Works smoothly on mobile devices |
+|current logged-in user|![Mobile View](https://github.com/user-attachments/assets/9ea3d32b-1022-4873-baf6-08c1cc3ef4a1) | displaying which user currently login username and from which gate logged in |
 ||
-|Search window |![search-vehicle](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e) |enter last 4 digit |
+|Search window |![search-vehicle](https://github.com/user-attachments/assets/347bea43-ebf4-4abf-8772-f8d7211e7bee) |enter vehicle last digit / if less than 4 digits enter then it will thow notification|
 ||
-|select guard & submit| ![Mark Out](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6) | Guard selection while marking vehicle OUT |
+|Search window |![search-vehicle](https://github.com/user-attachments/assets/0fb8be76-e895-4209-8f8a-d017bfff394e) |enter last 4 digit and click search button it will fetch owner name from db and in time/date from system|
 ||
-|daily entries table |![daily-entries](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a) | Works smoothly on mobile devices |
+|select guard & submit| ![Mark Out](https://github.com/user-attachments/assets/2412905b-bb16-43b4-94c0-fb6240241de6) | select guard before submitting entry. if your try to submit entry without select guard it will through notification |
 ||
-|Out vehicle|![out-vehicle](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed) | Works smoothly on mobile devices |
+|daily entries table |![daily-entries](https://github.com/user-attachments/assets/78a14486-745b-4213-a60b-ca8947f63b4a) | dailyentries stored in this table with vehicle_no, owner_name, in time/date, guard name, duration inside and out button|
 ||
-|Mobile view |![Mobile View](https://github.com/user-attachments/assets/530250cc-6c89-4af6-9cd3-ce57c5938914)| Works smoothly on mobile devices |
+|Out vehicle|![out-vehicle](https://github.com/user-attachments/assets/cab19c85-8108-4ab7-b2ac-3250cd60dfed) |which vehicle out from company then search vehicle and  marking vehicle OUT |
+||
+|validation|![Mobile View](https://github.com/user-attachments/assets/530250cc-6c89-4af6-9cd3-ce57c5938914)| if username login with different gate it will not allowed to vehicle out from another gate only given access that user in vehicle for out |
 ||
 |searching|![searching](https://github.com/user-attachments/assets/4d361318-d85c-48f3-928a-28b2dd9eb061) | Export any filtered data to Excel |
 ||
