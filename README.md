@@ -152,7 +152,7 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 -  Built with practical, industry-oriented tools
 
 ## License
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — feel free to use, modify, and distribute with credit.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - feel free to use, modify, and distribute with credit.
 
 
 
