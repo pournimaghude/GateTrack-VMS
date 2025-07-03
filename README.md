@@ -1,9 +1,10 @@
 ## Project Title - GateTrack-VMS
 **Intelligent Gate Entry Tracker Software** For secure, fast, and trackable vehicle movement.
 
-## 📚 Table of Contents
 
-- [👩‍💻 Author](#-author)
+## Table of Contents
+
+- [Author](#-author)
 - [Project Status](#project-status)
 - [Description](#description)
 - [Key Features](#key-features)
@@ -16,6 +17,10 @@
 - [Possible Improvements](#possible-improvements)
 - [Features](#features)
 - [License](#license)
+  
+   <br>
+   <br>
+   <br>
    
 ## 👩‍💻 Author  
 **Developed by:** Pournima Ghude
