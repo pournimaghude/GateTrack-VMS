@@ -57,7 +57,7 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 -  Realtime searchable vehicle data
 -  Built with practical, industry-oriented tools
 
-## 📸 Screenshots
+## Screenshots
 
 | Screenshot Name                       | Screenshot                                                                                                         | Description                                                                               |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
@@ -130,7 +130,7 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 - Vehicle image capture
 - RFID based entries
 
-## 📝 License
+## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — feel free to use, modify, and distribute with credit.
 
 
