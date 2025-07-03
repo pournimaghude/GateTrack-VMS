@@ -1,6 +1,22 @@
 ## Project Title - GateTrack-VMS
 **Intelligent Gate Entry Tracker Software** For secure, fast, and trackable vehicle movement.
 
+## 📚 Table of Contents
+
+- [👩‍💻 Author](#-author)
+- [Project Status](#project-status)
+- [Description](#description)
+- [Key Features](#key-features)
+- [Purpose](#purpose)
+- [Technologies Used](#technologies-used)
+- [Implementation](#implementation)
+- [DATABASE DESIGN](#database-design)
+- [ER Diagram](#er-diagram)
+- [Deployment](#deployment)
+- [Possible Improvements](#possible-improvements)
+- [Features](#features)
+- [License](#license)
+   
 ## 👩‍💻 Author  
 **Developed by:** Pournima Ghude
 
@@ -22,15 +38,6 @@
 - It supports location-wise user login, automated record storage, and seamless data export for reporting and analysis.
 - GateTrack-VMS has been solely developed by Ms. Pournima Ghude, utilizing a modern tech stack including JavaScript, Node.js, Express.js, SQL-SERVER, and more.
 - The software is optimized for both desktop and mobile usage, enhancing gate security and operational efficiency across all departments.
-
-## 📚 Table of Contents
-
-- [👩‍💻 Author](#-author)
-- [Project Status](#project-status)
-- [Key Features](#key-features)
-- [Purpose](#purpose)
-- [Technologies Used](#technologies-used)
-
   
 ## Key Features
 - **Real-time vehicle in/out tracking**
@@ -58,15 +65,7 @@
 JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Testing)|
 
 
-##  Features
-
--  Fast and secure vehicle check-in/check-out
--  Role-based guard entry access
--  Daily entry and export reports
--  Realtime searchable vehicle data
--  Built with practical, industry-oriented tools
-
-## Screenshots
+## Implementation
 
 | Screenshot Name                       | Screenshot                                                                                                         | Description                                                                               |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
@@ -102,6 +101,9 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 - **master-data table** store employee's details, Vehicle_number, Owner_name, Department, Designation, Empid, etc.
 - **vehicle-entries table** store vehicle complete record. Each entry includes vehicle number, owner name, location, in-time, in-date, out-date and out-time, in_by, out_by, duration_inside.
 - **company-vehicle-entries table** store company owned vehicles record. Each entry includes vehicle number, owner name, location, in-time, in-date, out-date and out-time, in_by, out_by, duration_inside, Remark.
+  
+## ER Diagram
+![image](https://github.com/user-attachments/assets/b31c72c1-b41e-4a5c-968f-3ac00359a0f3)
 
 ## Deployment
   - **Status:** Fully Developed & In Use.
@@ -128,8 +130,6 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
     - Live Table Updates, Reflects entry/exits instantly without page reloads
 
 
-![image](https://github.com/user-attachments/assets/b31c72c1-b41e-4a5c-968f-3ac00359a0f3)
-
 ## Possible Improvements
 - OTP-based or RFID-based IN/OUT
 - Attendance Integration
@@ -138,6 +138,13 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 - Add PDF Export
 - Vehicle image capture
 - RFID based entries
+
+##  Features
+-  Fast and secure vehicle check-in/check-out
+-  Role-based guard entry access
+-  Daily entry and export reports
+-  Realtime searchable vehicle data
+-  Built with practical, industry-oriented tools
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — feel free to use, modify, and distribute with credit.
