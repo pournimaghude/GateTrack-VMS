@@ -2,7 +2,7 @@
 **Intelligent Gate Entry Tracker Software** For secure, fast, and trackable vehicle movement.
 
 
-## Table of Contents
+### Table of Contents
 
 - [Author](#-author)
 - [Project Status](#project-status)
@@ -17,7 +17,7 @@
 - [Possible Improvements](#possible-improvements)
 - [Features](#features)
 - [License](#license)
-  
+  <br>
    
 ## 👩‍💻 Author  
 **Developed by:** Pournima Ghude
