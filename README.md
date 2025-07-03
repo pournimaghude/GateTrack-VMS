@@ -140,7 +140,7 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 - Deploy on cloud with CI/CD
 - Add PDF Export
 - Vehicle image capture
-- RFID based entries
+
 
 ##  Features
 -  Fast and secure vehicle check-in/check-out
