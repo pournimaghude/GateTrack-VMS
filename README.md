@@ -23,6 +23,15 @@
 - GateTrack-VMS has been solely developed by Ms. Pournima Ghude, utilizing a modern tech stack including JavaScript, Node.js, Express.js, SQL-SERVER, and more.
 - The software is optimized for both desktop and mobile usage, enhancing gate security and operational efficiency across all departments.
 
+## 📚 Table of Contents
+
+- [👩‍💻 Author](#-author)
+- [Project Status](#project-status)
+- [Key Features](#key-features)
+- [Purpose](#purpose)
+- [Technologies Used](#technologies-used)
+
+  
 ## Key Features
 - **Real-time vehicle in/out tracking**
 - **Gate-wise login (e.g., A1/A2)**
