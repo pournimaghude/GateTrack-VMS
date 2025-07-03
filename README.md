@@ -18,8 +18,6 @@
 - [Features](#features)
 - [License](#license)
   
-   <br>
-  
    
 ## 👩‍💻 Author  
 **Developed by:** Pournima Ghude
