@@ -32,7 +32,7 @@
 **[Connect with me on LinkedIn](https://www.linkedin.com/in/pournima-ghude)**
 
 ## Project Status 
-**✅ Fully Developed 💻 Deployed on local & internal network  📈 Improved gate security and data traceability**
+**✅ Fully Developed 💻 Deployed on local & internal network  📈 Improved gate security and data traceability**   
 
 ## Description
 - GateTrack-VMS is a real-time vehicle entry management system built to assist security guards in tracking, recording, and controlling vehicle movements at the gate.
