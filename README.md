@@ -8,6 +8,7 @@
 - [Project Status](#project-status)
 - [Description](#description)
 - [Key Features](#key-features)
+- [Authentication & Authorization]
 - [Purpose](#purpose)
 - [Technologies Used](#technologies-used)
 - [Implementation](#implementation)
@@ -55,6 +56,12 @@
 - **Secure database access with location-based entries access**
 - **Mobile responsive layout for guards**
 
+## Authentication & Authorization:
+- Role-based login: Admin & User
+- Session-based access control
+- Users are restricted by location-based access
+- Admins have full control over all data, exports, and vehicle-out actions
+  
 ## Purpose
 - The main goal of the project is to build a web-based software application that simplifies the process of vehicle entry and exit tracking.
 - The purpose of this project is to develop a software application that efficiently manages the entry and exit of vehicles at a factory gate.
