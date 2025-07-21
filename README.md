@@ -8,7 +8,6 @@
 - [Project Status](#project-status)
 - [Description](#description)
 - [Key Features](#key-features)
-- [Authentication & Authorization]
 - [Purpose](#purpose)
 - [Technologies Used](#technologies-used)
 - [Implementation](#implementation)
