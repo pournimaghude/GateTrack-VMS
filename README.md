@@ -158,7 +158,24 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - feel free to use, modify, and distribute with credit.
 
+## What I Learned After Building the VMS Application
+- Gained hands-on experience in full-stack web development using Node.js, SQL Server, HTML, CSS, and JavaScript.
 
+- Implemented role-based access control (RBAC) to restrict actions based on user roles (admin vs non-admin).
+
+- Developed dynamic filtering and export-to-Excel functionalities with precise backend validation.
+
+- Learned to calculate and store accurate durations by combining in_date + in_time and out_date + out_time.
+
+- Managed date/time formatting challenges between frontend and SQL Server backend.
+
+- Applied sessionless user validation logic based on username and location filters.
+
+- Enhanced UI to display real-time updates, maintain form consistency, and prevent unauthorized actions.
+
+- Strengthened problem-solving skills by debugging edge cases in time difference calculations.
+
+- Understood how to write clean and scalable backend REST APIs for data fetching, insertion, and export.
 
 
 
