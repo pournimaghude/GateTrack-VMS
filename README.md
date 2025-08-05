@@ -167,8 +167,6 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 - Learned to calculate and store accurate durations by combining in_date + in_time and out_date + out_time.
 
-- Managed date/time formatting challenges between frontend and SQL Server backend.
-
 - Applied sessionless user validation logic based on username and location filters.
 
 - Enhanced UI to display real-time updates, maintain form consistency, and prevent unauthorized actions.
@@ -176,12 +174,10 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 - Strengthened problem-solving skills by debugging edge cases in time difference calculations.
 
 - Understood how to write clean and scalable backend REST APIs for data fetching, insertion, and export.
--
+
 - Built a Full-Stack Vehicle Management System with real-time vehicle in/out tracking, authentication, and role-based access using Node.js, JavaScript, HTML/CSS, and SQL Server/MySQL.
 
 - Designed dynamic UI components to handle live data filtering, duration calculation, and conditional display based on user roles and locations.
-
-- Implemented Role-Based Access Control (RBAC): Separate functionalities for admin and users to ensure secure access and data isolation.
 
 - Created RESTful APIs for all CRUD operations, login/authentication, real-time vehicle movement, and export functionality.
 
