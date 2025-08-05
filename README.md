@@ -176,8 +176,26 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 - Strengthened problem-solving skills by debugging edge cases in time difference calculations.
 
 - Understood how to write clean and scalable backend REST APIs for data fetching, insertion, and export.
+-
+- Built a Full-Stack Vehicle Management System with real-time vehicle in/out tracking, authentication, and role-based access using Node.js, JavaScript, HTML/CSS, and SQL Server/MySQL.
 
+- Designed dynamic UI components to handle live data filtering, duration calculation, and conditional display based on user roles and locations.
 
+- Implemented Role-Based Access Control (RBAC): Separate functionalities for admin and users to ensure secure access and data isolation.
+
+- Created RESTful APIs for all CRUD operations, login/authentication, real-time vehicle movement, and export functionality.
+
+- Integrated advanced time and date handling logic to calculate exact duration between in/out timestamps across time zones and formats (SQL time, datetime, varchar issues handled).
+
+- Exported filtered vehicle data to Excel (CSV format) and enabled custom date range selection with validations.
+
+- Dynamic dropdown loading (guards, drivers, materials) from database using API integration to ensure scalability and maintainability.
+
+- Successfully integrated emailing feature using NodeMailer, enabling automatic email of exported reports.
+
+- Used GitHub for version control and project documentation including ER diagrams, flowcharts, and screenshots.
+
+- Learned effective debugging, backend validations, and converting business rules into precise backend logic.
 
 
 
