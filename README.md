@@ -101,6 +101,10 @@ JavaScript | Express.js     | JSON Server(for Testing-purpose) |  Postman(API-Te
 | **Vehicle Entries Table View**        | ![Vehicle table](https://github.com/user-attachments/assets/4b6025a4-fb13-4d05-8b31-04239d7fa87e)                  | Shows all entries with duration, filtering, and export options.                           |
 | **Company Vehicle Entries Tab**       | ![Company Vehicles](https://github.com/user-attachments/assets/22164799-11f9-4cbf-9204-a51a73590912)               | Tab specifically for company-owned vehicles.                                              |
 | **Complete Company Vehicle Table**    | ![Complete vehicle entries Table](https://github.com/user-attachments/assets/31fc2927-77eb-4739-8dd0-011293b6d7d5) | Contains detailed remarks for company vehicle usage.                                      |
+| **Manage Master Data**                | ![master data](https://github.com/user-attachments/assets/6746f5fa-3547-431e-a384-5170eb6105f2  )                  | only Admin having access for extra activities                                             |
+| **Manage Master Data**                | ![master data](https://github.com/user-attachments/assets/473f32f0-58b7-4cdc-a526-3030146f82d6  )                  | Manage Master data, Related Vehicle, another master section, adding new user              |
+| **vehicle Master Data**               | ![master data](https://github.com/user-attachments/assets/292ecf55-7a63-43ee-8366-80a8158d8d47)                    |  Admin can add new vehicle details, update vehicle details as well as view vehicle details.|
+| **Add new vehicle details**           | ![master data](https://github.com/user-attachments/assets/e744ccda-fac9-4f97-a930-64ee6cf54d59)                    | Manage Master data, Related Vehicle, another master section, adding new user              |
 | **Mobile View**                       | ![Mobile View](https://github.com/user-attachments/assets/990173ab-a17b-4a27-9ab1-5447d489f217)                    | Fully responsive UI optimized for mobile screen sizes.                                    |
 
 
