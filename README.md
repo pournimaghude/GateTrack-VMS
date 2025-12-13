@@ -1,4 +1,4 @@
-## Project Title - GateTrack-VMS
+## Project Title - VMS
 **Intelligent Gate Entry Tracker Software** For secure, fast, and trackable vehicle movement.
 
 
